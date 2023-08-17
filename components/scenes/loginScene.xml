@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="loginScene" extends="BaseScene">
+<interface>
+    <field id="email" type="string" onChange="onValideData" alwaysNotify="true"/>
+
+</interface>
+    <script type="text/brightscript" uri="loginScene.brs" />
+    <children>
+            <poster 
+                id="posterBackG"
+                uri = "pkg:/images/assets/Background02.png"
+                width = "1920"
+                height = "1080"
+            />
+            <rectangle
+            id="background"
+            width="550"
+            height="400"
+            translation = "[680, 140]"
+            color="0x212F3C9B"
+            opacy="0.2" />
+        <LayoutGroup id="layoutGroup" itemSpacings="[30]" horizAlignment="center" >
+            <Label
+                id="label"
+                font="font:MediumBoldSystemFont"
+                text="Sign In" />
+            <TextEditBox
+                id="email"
+                hintText="Enter your email"
+                
+                clearOnDownKey="false"
+                maxTextLength="75"
+                width="500" />
+            <TextEditBox
+                id="password"
+                hintText="Enter your password"
+                clearOnDownKey="false"
+                secureMode="true"
+                width="500"
+                translation="[0, 100]" />
+            <customButton
+                id="button"
+                width="120"
+                height="60"
+                text="Done" />
+        </LayoutGroup>
+    </children>
+</component>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="homeScene" extends="BaseScene">
+    <script type="text/brightscript" uri="homeScene.brs"/>
+    <script type="text/brightscript" uri="../../source/app.brs"/>
+    <children>
+            <poster 
+                id="posterBackG"
+                uri = "pkg:/images/assets/Background02.png"
+                width = "1920"
+                height = "1080"
+            />
+        <miniKeyboard 
+            id="keyboard"
+            width="45" 
+            translation="[5, 310]"/>
+        <rowlist id="rowlist"/>
+        <simpleLabel id="label" fontUri="font:BoldSystemFontFile" fontSize="45" />
+    </children>
+</component>

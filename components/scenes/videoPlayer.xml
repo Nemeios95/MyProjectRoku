@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="videoPlayer" extends="BaseScene">
+    <script type="text/brightscript" uri="videoPlayer.brs"/>
+    <children>
+        <Video
+            id="player"
+            width="1920"
+            height="1080"
+            enableUI="false"
+            translation="[0,0]" />
+        <PlayerBar
+            id="playerBar"
+            isVisible="false"
+            translation="[0, 900]" />
+    </children>
+</component>

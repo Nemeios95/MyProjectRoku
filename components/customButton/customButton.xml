@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="customButton" extends="Group" >
+    <interface>
+        <field id="text" type="string" onChange="textChanged" />
+        <field id="width" type="integer" onChange="widthChanged" />
+        <field id="height" type="integer" onChange="heightChanged" />
+        <field id="pressed" type="boolean" alwaysNotify="true" value="false" />
+    </interface>
+    <script type="text/brightscript" uri="customButton.brs" />
+    <children>
+        <Rectangle
+            id="border"
+            visible="false"
+            color="0xFFFFFF" />
+        <Rectangle
+            id="background"
+            color="0x212F3C"
+            translation="[5, 5]" />
+        <Label
+            id="label"
+            font="font:SmallestBoldSystemFont"
+            horizAlign="center"
+            vertAlign="center"
+            color="0xFFFFFF"
+            translation="[5, 5]" />
+    </children>
+</component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="BaseScene" extends="Group">
+    <interface>
+        <field id="baseScene" type="boolean" />
+        <field id="focused" type="boolean" onChange="focusChange" alwaysNotify="true" />
+        <field id="event" type="assocarray" />
+        <field id="initData" type="assocarray" onChange="initDataChanged" alwaysNotify="true" />
+    </interface>
+    <script type="text/brightscript" uri="baseScene.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+    <children>
+    </children>
+</component>

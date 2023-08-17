@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="profileSelection" extends="BaseScene">
+    <interface>
+        <field id="index" type="integer" alwaysNotify="true" onChange="onIndexChange"/>
+        <field id="maxIndex" type="integer"/>
+    </interface>
+    <script type="text/brightscript" uri="profileSelection.brs" />
+    <script type="text/brightscript" uri="router.brs" />
+    <children>
+        <rectangle
+            id="background"
+            width="1920"
+            height="1080"
+            color="#9C640C" />
+        <poster 
+            id="posterBackG"
+            uri = "pkg:/images/assets/Background02.png"
+            width = "1920"
+            height = "1080"
+        />
+        <LayoutGroup id="layoutGroup" itemSpacings="[100]" horizAlignment="center" >
+            <Label
+                id="label"
+                font="font:MediumBoldSystemFont"
+                text="Who Is Watching?" />
+            <LayoutGroup
+                id="profiles"
+                layoutDirection="horiz"
+                itemSpacings="[100]" />
+        </LayoutGroup>
+    </children>
+</component>
