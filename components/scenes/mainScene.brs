@@ -1,3 +1,4 @@
+'dasdas
 sub init()
     m.posterBackG = m.top.findNode("posterBackG")
     m.scenes = m.top.findNode("scenes")
