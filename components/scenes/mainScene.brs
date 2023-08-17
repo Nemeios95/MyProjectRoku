@@ -1,5 +1,6 @@
 'dasdas
 'comentario de prueba
+'comentario desde main
 sub init()
     m.posterBackG = m.top.findNode("posterBackG")
     m.scenes = m.top.findNode("scenes")
