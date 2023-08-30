@@ -19,7 +19,7 @@
             translation = "[680, 140]"
             color="0x212F3C9B"
             opacy="0.2" />
-        <LayoutGroup id="layoutGroup" itemSpacings="[30]" horizAlignment="center" >
+        <LayoutGroup id="layoutGroup" itemSpacings="[50]" horizAlignment="center" >
             <Label
                 id="label"
                 font="font:MediumBoldSystemFont"
