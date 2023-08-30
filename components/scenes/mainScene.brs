@@ -43,6 +43,10 @@ sub routingEventCallback(evt as object)
         m.router.navigateToScene("ProfileSelection", event.data, false)
     else if event.type = "HOME_SCENE" then
         m.router.navigateToScene("homeScene", event.data, false)
+
+    else if event.type = "DETAILS_SCREEN" then
+        m.router.navigateToScene("detailsScreen", event.data, false)
+
     else if event.type = "VIDEO_PLAYER" then
         m.router.navigateToScene("videoPlayer", event.data, false)
     end if
@@ -50,6 +54,7 @@ end sub
 
 function onKeyEvent(key as string, press as boolean) as Boolean
     handled = false
+    print "(< tecla >)" + key
     if press
         if key = "back" then
             m.router.navigateToPreviousScene()
