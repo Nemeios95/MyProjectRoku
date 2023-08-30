@@ -42,6 +42,8 @@ end sub
 sub playerPositionChanged()
     m.playerBar.duration = m.player.duration
     m.playerBar.position = m.player.position
+    print m.playerBar.duration
+    print m.playerBar.position 
 end sub
 
 sub playerBarControlChanged()
@@ -54,6 +56,19 @@ function onKeyEvent(key as string, press as boolean) as boolean
         if key = "up" and m.playerBar.visible = false then
             handled = true
             m.playerBar.isVisible = true
+        end if
+        if key = "down" and m.playerBar.visible = true then
+            handled = true
+            m.playerBar.isVisible = false
+        end if
+
+        if key = "rewind" then
+            handled = true
+            m.playerBar.position = m.playerBar.position - 10
+        end if
+        if key = "fastforward" then
+            handled = true
+            m.playerBar.position = m.playerBar.position + 10
         end if
     end if
     return handled

@@ -1,7 +1,9 @@
 sub init()
-    m.playerStatus = m.top.findNode("playerF1")
-    m.playerF1 = m.top.findNode("playerF2")
-    m.playerF2 = m.top.findNode("playerStatus")
+    m.posterButton1 = m.top.findNode("posterButtons1")
+    m.posterButton2 = m.top.findNode("posterButtons2")
+    m.playerStatus = m.top.findNode("playerStatus")
+    m.playerF1 = m.top.findNode("playerF1")
+    m.playerF2 = m.top.findNode("playerF2")
     m.playerStatus.observeField("pressed", "playerStatusPressed")
     m.progressBarBg = m.top.findNode("progressBarBg")
     m.progressBar = m.top.findNode("progressBar")
@@ -18,10 +20,14 @@ end sub
 
 sub statusChanged()
     status = m.top.status
-    if status = "playing"then
-        m.playerStatus.text = ">"
+    if status = "playing" then
+        m.playerStatus.text = "PL"
+        m.posterButton1.opacity = "1.0"
+        m.posterButton2.opacity = "0.0"
     else if status = "paused" then
-        m.playerStatus.text = "||"
+        m.playerStatus.text = "PA"
+        m.posterButton1.opacity = "0.0"
+        m.posterButton2.opacity = "1.0"
     end if
 end sub
 
@@ -45,11 +51,11 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             handled = true
         '-----------------------------
         else if key = "left" then
-            m.playerF1.setFocus()
+            m.playerBar.playerF1.setFocus()
             'handlePlayPause()
             handled = true
         else if key = "right" then
-            m.playerF2.setFocus()
+            m.playerBar.playerF2.setFocus()
             handled = true
             'handlePlayPause()
         end if
@@ -66,7 +72,35 @@ sub handlePlayPause()
 end sub
 
 sub handleControl(action as string)
-    print "atras o adelante"
+    
+
+    if action = "fastforward"
+        print "adelante"
+    end if
+    if action = "rewind"
+        print "atras"
+    end if
+
+    if action = "rewind" then
+        position = m.top.position
+        duration = m.top.duration
+        handled = true
+        if position > 10 then
+            position = position - 10
+        endif
+    end if
+    if action = "fastforward" then
+        position = m.top.position
+        duration = m.top.duration
+        handled = true
+        if position < duration
+            position = position + 10
+        end if
+    end if
+
+    print m.playerBar.duration
+    print m.playerBar.position
+
 end sub
 
 sub positionChanged()
@@ -103,7 +137,9 @@ function getFormatedTime(time)
             currentTime = "00:" + minutesPart + ":" + secondsPart
         end if
     end if
+    'print currentTime
     return currentTime
+    m.currentTime = currentTime
 end function
 
 sub playerStatusPressed()

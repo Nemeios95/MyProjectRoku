@@ -17,24 +17,41 @@
             color="0x000000"
             width="1920"
             height="180"/>
+
+        <poster 
+                id="posterButtons1"
+                uri = "pkg:/images/btns.png"
+                width = "250"
+                height = "70"
+                translation="[835, 80]"
+        />
+        <poster 
+                id="posterButtons2"
+                uri = "pkg:/images/btns2.png"
+                width = "250"
+                height = "70"
+                translation="[835, 80]"
+            />
+    
         <Button
             id="playerStatus"
-            text="►"
+            text="S"
             width="40"
             height="40"
-            translation="[900, 80]" />
+            translation="[900, 180]" />
+
         <Button
             id="playerF1"
-            text="◄◄"
+            text="'>'"
             width="40"
             height="40"
-            translation="[840, 80]" />
+            translation="[840, 180]" />
         <Button
             id="playerF2"
-            text="►►"
+            text="F"
             width="40"
             height="40"
-            translation="[960, 80]" />
+            translation="[960, 180]" />
         <Label
             id="currentTime"
             font="font:SmallestBoldSystemFont"
