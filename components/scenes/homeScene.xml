@@ -5,7 +5,7 @@
     <children>
             <poster 
                 id="posterBackG"
-                uri = "pkg:/images/assets/Background02.png"
+                uri = "pkg:/images/assets/Background03.png"
                 width = "1920"
                 height = "1080"
             />

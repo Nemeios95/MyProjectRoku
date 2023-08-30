@@ -10,7 +10,7 @@ sub init()
     m.rowlist.observeField("rowItemFocused", "onRowItemSelected")
 
     m.httpTask = createObject("roSGNode", "httpTask")
-    m.httpTask.term = "Animate"
+    m.httpTask.term = "ult"
     m.httpTask.observeField("response", "onHttpResponse")
     m.httpTask.control = "run"
 
@@ -32,6 +32,7 @@ sub onHttpResponse(event as object)
 end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
+    print key
     handled = false
     if press = true then
         if key = "right" and m.keyboard.hasFocus() then
@@ -42,11 +43,12 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.keyboard.setFocus(true)
             'stop
             handled = true
-        else if key = "OK" then
-            print "OK"
-            stop
-            onItemSelected()
+        else if key = "play" then
+            'stop
+            print "okey" + key
+            onRowItemSelected(key)
             handled = true
+
         end if
         return handled
     end if
@@ -55,7 +57,7 @@ end function
 sub onKeyboardTextChanged(event as dynamic)
     print "tecla"
     term = event.getData()
-    if term <> "" and term.len() > 1
+    if term <> "" and term.len() > 3
         m.httpTask = createObject("roSGNode", "httpTask")
         m.httpTask.observeField("response", "onHttpResponse")
         m.httpTask.term = term
@@ -74,10 +76,10 @@ sub onRowItemFocused(event as object)
     print m.label.text
 end sub
 
-'sub onRowItemSelected(event as object)
-sub onRowItemSelected()
-    print "ok"
-    if m.label.text = "The Animated Passion"
+'sub onRowItemSelected(t)
+sub onRowItemSelected(keyPush as string)
+    print "hola" + keyPush
+    if keyPush = "play"
         m.top.event = {
             type: "VIDEO_PLAYER"
             data: {}
@@ -85,8 +87,5 @@ sub onRowItemSelected()
     end if
 end sub
 
-sub onItemSelected()
 
-
-end sub
 
