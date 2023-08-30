@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="detailsScreen" extends="Group">
+<script type="text/brightscript" uri="detailsScreen.brs"/>
+<script type="text/brightscript" uri="../../source/app.brs"/>
+<children>
+                <poster 
+                id="posterBackG"
+                uri = "pkg:/images/assets/Background02.png"
+                width = "1920"
+                height = "1080"
+            />
+
+            <simpleLabel
+                id="tittleMovie"
+                text="Hola prueba"
+            
+            />
+</children> 
+
+</component>
