@@ -14,7 +14,7 @@
             color="#9C640C" />
         <poster 
             id="posterBackG"
-            uri = "pkg:/images/assets/Background02.png"
+            uri = "pkg:/images/assets/Background03.png"
             width = "1920"
             height = "1080"
         />
@@ -26,7 +26,8 @@
             <LayoutGroup
                 id="profiles"
                 layoutDirection="horiz"
-                itemSpacings="[100]" />
+                itemSpacings="[100]" >
+            </LayoutGroup>
         </LayoutGroup>
     </children>
 </component>
