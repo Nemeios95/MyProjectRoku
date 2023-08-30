@@ -9,17 +9,18 @@
     </interface>
     <children>
         <layoutGroup id="layoutGroup" itemSpacings="[30]" horizAlignment="center">
-            <rectangle
-                id="rectangle"
-                width="338"
-                height="338"
-                color="0xFFFFFF" >
+                <poster
+                    id="profileBackground"
+                    width="338"
+                    height="338"
+                    uri="pkg:/images/fondo.png"
+                >
                 <poster
                     id="poster"
                     width="318"
                     height="318"
                     translation="[10, 10]" />
-            </rectangle>
+                </poster>
             <simpleLabel
                 id="simpleLabel"
                 fontUri="font:BoldSystemFontFile"

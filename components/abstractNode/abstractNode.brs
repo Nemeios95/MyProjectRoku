@@ -22,5 +22,5 @@ end sub
 
 function getDateTime()
     dt = createObject("roDateTime")
-    return dt.AsDateString("short-month-no-weekday")
+    'return dt.AsDateString("short-month-no-weekday")
 end function
