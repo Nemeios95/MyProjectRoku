@@ -15,10 +15,6 @@ end sub
 
 sub initHttpTask()
     url = m.constants.baseUrl + m.constants.apiKey + m.constants.searchPart
-    'url =  "https://pokeapi.co/api/v2/pokemon/charmander"
-    'stop
-    'handle request
-    'stop
     urlTransfer = createObject("roUrlTransfer")
     urlTransfer.setCertificatesFile("common:/certs/ca-bundle.crt")
     urlTransfer.initClientCertificates()
@@ -47,8 +43,8 @@ sub handleResponse(body)
             itemContent.title = result.title
             itemContent.description = result.overview
             itemContent.id = result.id
-            if result.poster_path <> invalid and result.poster_path <> ""
-            itemContent.fhdPosterUrl = m.constants.imageUrl + result.poster_path
+            if result.backdrop_path <> invalid and result.backdrop_path <> ""
+            itemContent.fhdPosterUrl = m.constants.imageUrl + result.backdrop_path
             end if
         end for
     end for
